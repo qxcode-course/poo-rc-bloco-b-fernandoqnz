@@ -1,19 +1,25 @@
 class Camisa:
-    def __init__(self): # isso é o construtor em python
-        self.__tamanho: str = "" # atributos em python com __ na frente são privados
+    def __init__(self):  # Construtor
+        self.__tamanho: str = ""
 
-    def getTamanho(self) -> str: # métodos em python tem self como primeiro atributo
+    def getTamanho(self) -> str:
         return self.__tamanho
 
     def setTamanho(self, valor: str):
-        # implementar os testes de valor e disparar os avisos caso necessário
+        tamanhos_validos = ["PP", "P", "M", "G", "GG", "XG"]
+        if valor not in tamanhos_validos:
+            print("Erro: o tamanho deve ser entre: PP, P, M, G, GG e XG.")
+            return
+        
+        self.__tamanho = valor
 
-# loop principal
-roupa = Roupa() # criando roupa com valor tamanho padrão
 
-while roupa.getTamanho() == "": # mantendo usuário no loop
-    print("Digite seu tamanho de roupa")
-    tamanho = input() # lendo a resposta
-    roupa.setTamanho(tamanho) # tentando atribuir e disparando erros
+# Programa principal
+roupa = Camisa()
 
-print("Parabens, você comprou uma roupa tamanho", roupa.getTamanho())
+while roupa.getTamanho() == "":
+    print("Digite seu tamanho de roupa:")
+    tamanho = input().strip().upper()  # deixa maiúsculo e remove espaços
+    roupa.setTamanho(tamanho)
+
+print("Parabéns, você comprou uma roupa tamanho", roupa.getTamanho())

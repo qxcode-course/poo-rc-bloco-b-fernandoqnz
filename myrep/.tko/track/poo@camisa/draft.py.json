@@ -1,0 +1,29 @@
+{
+    "patches": [
+        {
+            "label": "2025-10-21_20-38-41",
+            "content": "@@ -107,17 +107,18 @@\n %22P%22, %22M%22\n-,\n+ e\n  %22G%22, %22G\n@@ -123,79 +123,154 @@\n %22GG%22\n-,\n+ e\n  %22XG%22\n-%0A\n   \n-      self.roupa: str= %22%22  %0A%0A    def getTamanho(self) -%3E str: \n+# atributos em python com __ na frente s%C3%A3o privados%0A%0A    def getTamanho(self) -%3E str: # m%C3%A9todos em python tem self como primeiro atributo\n %0A   \n@@ -347,194 +347,152 @@\n     \n-if tamanho !=setTamanho:%0A            print(%22Erro:\n+# implementar\n  o\n+s\n  t\n-amanho deve ser entre : PP, P, M, G, GG e XG.%22)%0A            return%0A        %0A        %0A        self.__tamanho = valor%0A%0Aroupa = Roupa() \n+estes de valor e disparar os avisos caso necess%C3%A1rio%0A%0A# loop principal%0Aroupa = Roupa() # criando roupa com valor tamanho padr%C3%A3o\n %0A%0Awh\n@@ -521,16 +521,42 @@\n  == %22%22: \n+# mantendo usu%C3%A1rio no loop\n %0A    pri\n@@ -607,21 +607,34 @@\n o = \n-int(\n input()\n-)\n  \n+# lendo a resposta\n %0A   \n@@ -660,16 +660,77 @@\n amanho)%0A\n+    if != tamanho%0A        print(%22tamanho de roupa invalido%22)%0A\n     %0A%0Apr\n",
+            "lines": "22"
+        },
+        {
+            "label": "2025-10-21_20-51-14",
+            "content": "@@ -125,16 +125,45 @@\n %22, %22XG%22%0A\n+        self.roupa: str= %22%22  \n %0A%0A    de\n@@ -396,16 +396,25 @@\n        %0A\n+        %0A\n         \n@@ -445,21 +445,20 @@\n roupa = \n-Camis\n+Roup\n a() %0A%0Awh\n",
+            "lines": "25"
+        },
+        {
+            "label": "2025-10-21_20-54-40",
+            "content": "@@ -98,10 +98,39 @@\n  = %22\n+PP%22, %22P%22, %22M%22, %22G%22, %22GG%22, %22XG\n %22%0A\n-\n %0A%0A  \n@@ -245,22 +245,18 @@\n  if \n-valor != self.\n+tamanho !=\n setT\n@@ -362,104 +362,8 @@\n urn%0A\n-        else:%0A            print(%22Parabens, voc%C3%AA comprou uma roupa tamanho%22, roupa.getTamanho())%0A\n     \n@@ -506,19 +506,19 @@\n manho = \n-str\n+int\n (input()\n",
+            "lines": "24"
+        },
+        {
+            "label": "2025-10-21_21-30-49",
+            "content": "@@ -220,16 +220,17 @@\n valor !=\n+ \n self.set\n@@ -238,16 +238,16 @@\n amanho:%0A\n-\n         \n@@ -333,16 +333,112 @@\n  return%0A\n+        else:%0A            print(%22Parabens, voc%C3%AA comprou uma roupa tamanho%22, roupa.getTamanho())%0A\n         \n@@ -482,12 +482,13 @@\n a = \n-Roup\n+Camis\n a() \n",
+            "lines": "26"
+        },
+        {
+            "label": "2025-10-21_21-33-15",
+            "content": "class Camisa:\n    def __init__(self): # isso \u00e9 o construtor em python\n        self.__tamanho: str = \"\"\n\n\n    def getTamanho(self) -> str: \n        return self.__tamanho\n\n    def setTamanho(self, valor: str):\n        if valor !=self.setTamanho:\n            print(\"Erro: o tamanho deve ser entre : PP, P, M, G, GG e XG.\")\n            return\n        \n        self.__tamanho = valor\n\nroupa = Roupa() \n\nwhile roupa.getTamanho() == \"\": \n    print(\"Digite seu tamanho de roupa\")\n    tamanho = str(input()) \n    roupa.setTamanho(tamanho)\n    \n\nprint(\"Parabens, voc\u00ea comprou uma roupa tamanho\", roupa.getTamanho())",
+            "lines": "24"
+        }
+    ]
+}
